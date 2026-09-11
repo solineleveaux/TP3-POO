@@ -1,7 +1,3 @@
-
-import java.util.stream.Stream;
-import javax.swing.UIDefaults;
-
 public class Plats {
 
     protected String nom ;
@@ -42,7 +38,7 @@ public class Plats {
 
     public String get_Description ()
     {
-        
+
     }
 
     private void afficherDetail ()
