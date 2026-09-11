@@ -1,4 +1,4 @@
-public class Client {
+public class Client extends Utilisateur {
 
     protected String adresseLivraison ;
     protected String numeroTelephone ;
