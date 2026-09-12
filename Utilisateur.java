@@ -19,13 +19,13 @@ public class Utilisateur
         return this.connecte ;
     }
 
-    private void seConnecter () 
+    protected  void seConnecter () 
     {
         //mettre à true this.connecte
         connecte = true ;
     }
 
-    private void seDeconnecter ()
+    protected void seDeconnecter ()
     {
         //mettre à false this.connecte
         connecte = false ;
