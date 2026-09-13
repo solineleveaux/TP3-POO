@@ -7,24 +7,28 @@ public class Commande {
     private String dateCommande;
     private String Statut;
     private List<Plats> listePlats;
+    private String adresseLivraison ;
 
-    public Commande(int id, String date, String etat) {
+    // Constructeur avec adresse (optionnel)
+    public Commande(int id, String date, String etat, String adresseLivraison) {
         this.idCommande = id;
         this.dateCommande = date;
         this.Statut = etat;
         this.listePlats = new ArrayList<>();
-    }
-
-    protected void setID(int nv_ID) {
-        this.idCommande = nv_ID;
-    }
-
-    protected void setDate(String Date) {
-        this.dateCommande = Date;
+        this.adresseLivraison = adresseLivraison;
     }
 
     protected void setStatut(String nv_Statut) {
         this.Statut = nv_Statut;
+    }
+
+    public void setAdresseLivraison(String adresse) 
+    {
+        this.adresseLivraison = adresse;
+    }
+
+    public String getAdresseLivraison() {
+        return this.adresseLivraison;
     }
 
     public int get_id_commande() {
@@ -61,8 +65,10 @@ public class Commande {
         return total;
     }
 
-    protected boolean validerCommande() {
-        if (this.listePlats != null && this.listePlats.size() > 0) {
+    protected boolean validerCommande() 
+    {
+        if (this.listePlats != null && this.listePlats.size() > 0) 
+        {
             this.Statut = "Validée";
             return true;
         }
@@ -70,8 +76,10 @@ public class Commande {
 
     }
 
-    protected boolean validerPaiement() {
-        if (calculer_total() > 0 && "Validée".equals(this.Statut)) {
+    protected boolean validerPaiement() 
+    {
+        if (calculer_total() > 0 && "Validée".equals(this.Statut)) 
+        {
             this.Statut = "Payée";
             return true;
         }
