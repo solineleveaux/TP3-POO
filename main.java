@@ -47,6 +47,13 @@ public static void main (String args[])
     {
         System.out.println("Plat " + (i+1) + " : " + commande.getListePlats().get(i).get_Nom());
     }
+
+    commande.supprimer_Plat(burger);
+
+    for (int i=0; i<commande.getListePlats().size(); i++)
+    {
+        System.out.println("Plat " + (i+1) + " : " + commande.getListePlats().get(i).get_Nom());
+    }
     
 
     System.out.println("Total actuel : " + commande.calculer_total() + " Euros");

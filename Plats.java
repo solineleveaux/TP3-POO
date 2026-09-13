@@ -21,7 +21,7 @@ public class Plats {
         System.out.println("--- Information concernant le plat ---");
         System.out.println("Nom du plat : " + this.nom);
         System.out.println("Prix du plat : " + this.prix);
-        System.out.println("Description du plant : " + this.description);
+        System.out.println("Description du plat : " + this.description);
     }
 
     protected void setNom (String name)
