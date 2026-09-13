@@ -1,3 +1,5 @@
+
+
 public class Utilisateur 
 {
     protected int identifiant;
@@ -5,6 +7,13 @@ public class Utilisateur
     protected String email;
     protected boolean connecte;
 
+    public Utilisateur ()
+    {
+        this.identifiant = 0;
+        this.nom = "Inconnu" ;
+        this.email = "Inconnu" ;
+        this.connecte = false ;
+    }
     public Utilisateur(int id, String name, String mail)
     {
         this.identifiant = id;
@@ -13,7 +22,7 @@ public class Utilisateur
         this.connecte = false;
     }
 
-    private boolean suisJeConnecte ()
+    protected boolean suisJeConnecte ()
     {
         // recupérer la valeur de this.connecte => return
         return this.connecte ;

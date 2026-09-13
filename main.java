@@ -24,6 +24,20 @@ public static void main (String args[])
     System.out.println(u1.nom);
     System.out.println(u1.email);
 
+    
+    System.out.println();
+    System.out.println("Test Client");
+    Client c1 = new Client(1011, "Faustine", "Faufau@gmail.com", "Rue du Nord, Antony", "07 81 99 13 12", "Carte") ;
+    System.out.println(c1.get_id());
+    System.out.println(c1.get_nom());
+    System.out.println(c1.get_email());
+    System.out.println(c1.getAdresseLivraison());
+    System.out.println(c1.getnumeroTelephone());
+    System.out.println(c1.getMoyenPaiement());
+    c1.seConnecter();
+    System.out.println("Se connecter : " + c1.connecte);
+    c1.passerCommande(new Commande()) ;
+
 
 
 

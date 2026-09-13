@@ -12,6 +12,11 @@ public class Commande {
 
     }
 
+    public Commande ()
+    {
+
+    }
+
     protected  void setID (int nv_ID)
     {
 
@@ -42,7 +47,7 @@ public class Commande {
         
     }
 
-    private void ajouter_Plat (Plats plates)
+    protected void ajouter_Plat (Plats plates)
     {
 
     }
@@ -57,12 +62,12 @@ public class Commande {
 
     }
 
-    private boolean validerCommande ()
+    public boolean validerCommande ()
     {
 
     }
 
-    private boolean validerPaiement ()
+    public boolean validerPaiement ()
     {
 
     }
