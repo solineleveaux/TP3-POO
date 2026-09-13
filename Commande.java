@@ -7,32 +7,28 @@ public class Commande {
     private String dateCommande;
     private String Statut;
     private List<Plats> listePlats;
+    private String adresseLivraison ;
 
-    public Commande(int id, String date, String etat) {
+    // Constructeur avec adresse (optionnel)
+    public Commande(int id, String date, String etat, String adresseLivraison) {
         this.idCommande = id;
         this.dateCommande = date;
         this.Statut = etat;
         this.listePlats = new ArrayList<>();
-    }
-
-    public Commande ()
-    {
-        this.idCommande = 0 ;
-        this.dateCommande = null ;
-        this.Statut = null ;
-        this.listePlats = new ArrayList<>();
-    }
-
-    protected void setID(int nv_ID) {
-        this.idCommande = nv_ID;
-    }
-
-    protected void setDate(String Date) {
-        this.dateCommande = Date;
+        this.adresseLivraison = adresseLivraison;
     }
 
     protected void setStatut(String nv_Statut) {
         this.Statut = nv_Statut;
+    }
+
+    public void setAdresseLivraison(String adresse) 
+    {
+        this.adresseLivraison = adresse;
+    }
+
+    public String getAdresseLivraison() {
+        return this.adresseLivraison;
     }
 
     public int get_id_commande() {

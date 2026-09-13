@@ -6,7 +6,7 @@ public class Client extends Utilisateur {
 
     public Client ()
     {
-        super() ;
+        super();
         this.adresseLivraison = "Adresse Inconnue" ;
         this.numeroTelephone = "0000000000" ;
         this.moyenPaiement = "Aucun" ;
