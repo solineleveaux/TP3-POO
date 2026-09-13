@@ -1,34 +1,39 @@
-public static void main(String args[]) {
-
-    // 1. Instanciation du restaurant et de sa carte
+public static void main(String args[])
+{
+    // Instancation du client
+    Client client = new Client(1, "Alice", "alice@gmail.com", "15 Rue de Paris, Antony", "0601020304", "CB");
+    
+    // Instanciation du restaurant et de sa carte
     Restaurant resto = new Restaurant("Sushi & Burger Express", "22 Rue Auguste Mounié, Antony");
     Plats pizza = new Plats("Pizza Royale", 15, "Base tomate, fromage, jambon");
     Plats burger = new Plats("Burger Gourmet", 18, "Boeuf, cheddar affiné");
-    
     resto.ajouterPlatAuMenu(pizza);
     resto.ajouterPlatAuMenu(burger);
     resto.afficherMenu();
 
-    // 2. Création du client
-    Client client1 = new Client(1, "Alice", "alice@gmail.com", "15 Rue de Paris, Antony", "0601020304", "CB");
-    client1.seConnecter();
 
-    // 3. Création et passage de la commande par le client
-    Commande commande = new Commande(101, "13-09-2026", "En création", client1.getAdresseLivraison());
-    commande.ajouter_Plat(pizza);
-    commande.ajouter_Plat(burger);
-    client1.passerCommande(commande); // Valide et paye la commande
+    // Pour créer une commande, le client doit se connecter 
+    client.seConnecter();
+    // passer commande 
+    Commande commande = new Commande(101, "13-09-2026", "En création", client.getAdresseLivraison());
+    commande.ajouter_Plat(pizza); // Il ajoute une pizza a sa commande
+    commande.ajouter_Plat(burger); // Il ajoute un burger a sa commande
+    client.passerCommande(commande); // Il valide et paye la commande
 
-    // 4. Préparation par le restaurant
+    // preparation
     System.out.println("\n--- PRÉPARATION RESTAURANT ---");
     resto.preparerCommande(commande);
 
-    // 5. Prise en charge et livraison par le livreur
+    // Instanciation du livreur pour livrer la commande au client
     System.out.println("\n--- LIVRAISON ---");
-    Livreur l1 = new Livreur(201, "Karim", "karim@express.fr", "Scooter");
-    l1.seConnecter();
+    Livreur livreur = new Livreur(201, "Karim", "karim@express.fr", "Scooter");
 
-    // Le livreur intervient une fois la commande prête
-    l1.prendreEnChargeCommande(commande);
-    l1.livrerCommande(commande);
+    // prise en charge
+    // Avant de prendre en charge une commande, le livreur doit se connecter
+    livreur.seConnecter();
+    // prise en charge
+    livreur.prendreEnChargeCommande(commande);
+    // livraison
+    livreur.livrerCommande(commande);
+
 }
