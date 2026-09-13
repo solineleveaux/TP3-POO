@@ -27,22 +27,29 @@ public class Client extends Utilisateur {
         System.out.println("Adresse de livraison : " + this.adresseLivraison);
         System.out.println("Moyen de paiement sélectionné : " + this.moyenPaiement);
         
-        if (this.suisJeConnecte())
+        if (this.suisJeConnecte()) 
         {
-            // Appel des méthodes de la classe Commande pour exécuter le paiement
             boolean validation = panier.validerCommande();
             if (validation) 
             {
                 boolean paiementReussi = panier.validerPaiement();
                 if (paiementReussi) 
-                    {
+                {
                     System.out.println("Succès : La commande a été transmise au restaurant !");
                 } 
                 else 
                 {
                     System.out.println("Échec : Le paiement a été refusé.");
                 }
+            } 
+            else 
+            {
+                System.out.println("Échec : Impossible de valider la commande (panier vide).");
             }
+        } 
+        else 
+        {
+            System.out.println("Échec : Vous devez être connecté pour passer une commande.");
         }
     }
 
